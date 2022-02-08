@@ -131,7 +131,17 @@ docker-compose ps
 docker-compose top
 
 ```
+docker run -d -p 8000:8000 --name=currency-exchange pawansurya/currency-exchange:0.0.1-RELEASE
 
+docker run -d -p 8100:8100 --name=currency-conversion pawansurya/currency-conversion:0.0.1-RELEASE
+
+docker run -d -p 8000:8000 --name=currency-exchange --network=currency-network pawansurya/currency-exchange:0.0.1-RELEASE
+
+docker run -d -p 8100:8100 --env CURRENCY_EXCHANGE_SERVICE_HOST=http://currency-exchange --name=currency-conversion --network=currency-network pawansurya/currency-conversion:0.0.1-RELEASE
+
+docker push pawansurya/currency-exchange:0.0.1-RELEASE
+
+docker push pawansurya/currency-conversion:0.0.1-RELEASE
 
 ```
 docker build -t in28min/hello-world-java:0.0.1.RELEASE .
