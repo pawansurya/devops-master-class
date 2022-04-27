@@ -129,6 +129,8 @@ kubectl delete deployment hello-world-rest-api
 kubectl get all -o wide
 kubectl delete replicaset.apps/hello-world-rest-api-797dd4b5dc
 
+To Mention --> minReadySeconds: 45
+
 kubectl get pods --all-namespaces
 kubectl get pods --all-namespaces -l app=hello-world-rest-api
 kubectl get services --all-namespaces
