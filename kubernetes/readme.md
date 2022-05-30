@@ -123,6 +123,9 @@ kubectl apply -f deployment.yaml
 kubectl get all -o wide
 kubectl delete all -l app=hello-world-rest-api
 
+In Goolgle console to watch events
+     --> watch curl http://34.132.76.105:8080/hello-world
+
 kubectl get svc --watch
 kubectl diff -f deployment.yaml
 kubectl delete deployment hello-world-rest-api
