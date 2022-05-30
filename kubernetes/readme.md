@@ -116,6 +116,8 @@ kubectl rollout undo deployment hello-world-rest-api --to-revision=1
 kubectl logs hello-world-rest-api-58ff5dd898-6ctr2
 kubectl logs -f hello-world-rest-api-58ff5dd898-6ctr2
 
+kubectl create deployment hello-world-rest-api --image=in28min/hello-world-rest-api:0.0.1.RELEASE --dry-run=client -o yaml
+
 kubectl get deployment hello-world-rest-api -o yaml
 kubectl get deployment hello-world-rest-api -o yaml > deployment.yaml
 kubectl get service hello-world-rest-api -o yaml > service.yaml
